@@ -40,9 +40,9 @@ node[:apps].each do |app|
   
   cap_setup  app['id'] do
     path "/var/www/#{app['id']}"
-    owner "nobody"
-    group "nogroup"
-    appowner "nobody"
+    owner "deployer"
+    group "deployer"
+    appowner "deployer"
   end
 end
 
