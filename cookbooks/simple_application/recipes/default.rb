@@ -24,6 +24,7 @@ include_recipe "rails_enterprise::default"
 include_recipe "database::simple"
 include_recipe "capistrano::default"
 include_recipe "git::default"
+include_recipe "bundler::enterprise"
 
 
 node[:apps].each do |app|
