@@ -23,6 +23,7 @@ include_recipe "apache2::mod_rewrite"
 include_recipe "rails_enterprise::default"
 include_recipe "database::simple"
 include_recipe "capistrano::default"
+include_recipe "git::default"
 
 
 node[:apps].each do |app|
@@ -43,6 +44,17 @@ node[:apps].each do |app|
     owner "deployer"
     group "deployer"
     appowner "deployer"
+  end
+  
+  template "/var/www/#{app['id']}/shared/system/database.yml" do
+    source "database.yml.erb"
+    owner "deployer"
+    group "deployer"
+    
+    variables(
+      :host => "127.0.0.1",
+      :databases => app['databases']
+    )
   end
 end
 
