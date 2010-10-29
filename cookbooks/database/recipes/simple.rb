@@ -21,8 +21,6 @@
 db_info = Hash.new
 root_pw = String.new
 
-puts node[:apps].inspect
-
 node[:apps].each do |app|
   app[:databases].each do |env, db|
     db_info[env] = db
