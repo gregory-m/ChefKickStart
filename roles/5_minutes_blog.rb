@@ -1,18 +1,21 @@
 name "5_minutes_blog"
-description "My blog in 5 minutes on Rails + ree + passanger + apache + mysq"
-run_list("recipe[users::sysadmins]", "recipe[ruby_enterprise::default]", "recipe[passenger_enterprise::apache2]",
-          "recipe[rails_enterprise::default]", "recipe[database::simple]")
+description "My blog in 5 minutes on Rails + ree + passanger + apache + mysql"
 
-default_attributes("apps" => ["databases" => 
-                             {"production" => {
-                                "adapter" => "mysql",
-                                "database" => "5_minutes_blog_production",
-                                "encoding" => "utf8",
-                                "password" => "awesome_password",
-                                "reconnect" => true,
-                                "username" => "5_minutes"
-                                }
-                              }])
+run_list("recipe[users::sysadmins]", "recipe[simple_application::default]")
+
+default_attributes("apps" => [
+                             "id" => "5_minutes_blog",
+                             "databases" => 
+                                {"production" => {
+                                  "adapter" => "mysql",
+                                  "database" => "5_minutes_blog_production",
+                                  "encoding" => "utf8",
+                                  "password" => "awesome_password",
+                                  "reconnect" => true,
+                                  "username" => "5_minutes"
+                                  }}
+                              ]
+                    )
  
 
                                                   # 
