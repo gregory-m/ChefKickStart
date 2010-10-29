@@ -1,0 +1,8 @@
+{
+  "id": "gregory",
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwwQuxjcnG28s3xDL7DNt8gQeFJe6bRQdMrVF0FBPYd1HeR06lLmSqn01UenptEVKvQr/w9eJvD5+zbELiIngg6QqfirltY3vEh+tHz3VW0dFGtU+YLXt/O5e9SMQl4UAp4xvQe4OfadL5wju0HcYHEx2znPYaxhRzSdQvm9GClr8u8JSX5K39bJLetkgCTsx6hUHwcGzrKhVJRQasbVUR0ZuFCk7f7XHkKVEOWkai7WkxMegYL33Mdhl2e46mLqLFMu0MxUT0UlJEHA2cgCVKzL08FP9CxwIkY3YS0d7VGnTk4XWZahubEbg0/t6TvIqCLw46zjjCrSiu4AGoYdZZw== gregory@mbp",
+  "groups": "sysadmin",
+  "uid": 2001,
+  "shell": "\/bin\/bash",
+  "comment": "Delete This"
+}
