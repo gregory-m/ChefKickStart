@@ -22,11 +22,12 @@ include_recipe "passenger_enterprise::apache2"
 include_recipe "apache2::mod_rewrite"
 include_recipe "rails_enterprise::default"
 include_recipe "database::simple"
-
+include_recipe "capistrano::default"
 
 
 node[:apps].each do |app|
   server_aliases = [ "#{app['id']}.#{node[:domain]}", node.fqdn ]
+  
   
   web_app app['id'] do
     #cookbook "apache2"
@@ -35,6 +36,13 @@ node[:apps].each do |app|
     server_aliases server_aliases
     log_dir node[:apache][:log_dir]
     rails_env "production"
+  end
+  
+  cap_setup  app['id'] do
+    path "/var/www/#{app['id']}"
+    owner "nobody"
+    group "nogroup"
+    appowner "nobody"
   end
 end
 
