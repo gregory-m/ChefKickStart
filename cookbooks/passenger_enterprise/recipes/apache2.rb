@@ -33,7 +33,8 @@ include_recipe "apache2"
 end
 
 execute "passenger_apache2_module" do
-  command "#{node[:ruby_enterprise][:install_path]}/bin/passenger-install-apache2-module -a"
+  command "#{node[:ruby_enterprise][:install_path]}/bin/ruby #{node[:passenger_enterprise][:root_path]}/bin/passenger-install-apache2-module -a"
+
   creates node[:passenger_enterprise][:module_path]
 end
 
