@@ -1,3 +1,4 @@
 knife.rb
 *.pem
 metadata.json
+.DS_Store
