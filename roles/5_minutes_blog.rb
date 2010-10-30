@@ -1,7 +1,7 @@
 name "5_minutes_blog"
 description "My blog in 5 minutes on Rails + ree + passanger + apache + mysql"
 
-run_list("recipe[users::sysadmins]","recipe[sudo::default]" ,"recipe[simple_application::default]")
+run_list("recipe[users::sysadmins]","recipe[sudo::default]" , "recipe[chef::client]", "recipe[simple_application::default]")
 
 default_attributes("apps" => [
                              "id" => "5_minutes_blog",
